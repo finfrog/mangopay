@@ -20,13 +20,13 @@ function Mango(options){
 
   // set base path
   this._api.basePath = ['/', this._api.version, '/', this._options.username].join('')
-  
+
   // switch to production url
   if(this._options.production)
     this._api.host = 'api.mangopay.com'
 
   // mount endpoints
-  this.mount(this._options.mount || 'user|card|wallet|author|bank|document|payin|hook|event')
+  this.mount(this._options.mount || 'user|card|wallet|author|bank|document|payin|hook|event|mandate')
 
   // set auth
   this.setAuth(options)

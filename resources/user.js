@@ -102,7 +102,13 @@ module.exports = httpClient.extend({
       method: 'GET',
       path: '{UserId}/bankaccounts',
       params: { 'UserId': { required: true } }
-    })
+    }),
+
+    mandates: httpMethod({
+      method: 'GET',
+      path: '{UserId}/mandates',
+      params: { 'UserId': { required: true } }
+    }),
 
   }
 
