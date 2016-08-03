@@ -67,14 +67,26 @@ module.exports = httpClient.extend({
       }
     }),
 
+    createByDirectDebit: httpMethod({
+      method: 'POST',
+      path: '/directdebit/direct',
+      params: {
+          'AuthorId': { required: true }
+        , 'CreditedWalletId': { required: true }
+        , 'DebitedFunds ': { required: true, default: { Currency: 'EUR', Amount: 0 } }
+        , 'Fees': { required: true, default: { Currency: 'EUR', Amount: 0 } }
+        , 'MandateId': { required: true }
+      }
+    }),
+
     fetch: httpMethod({
       method: 'GET',
       path: '/{Id}',
       params: {
         'Id': { required: true }
       }
-    }), 
-    
+    }),
+
     createRefund: httpMethod({
       method: 'POST',
       path: '/{Id}/refunds',
