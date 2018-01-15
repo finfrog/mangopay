@@ -100,11 +100,9 @@ module.exports = httpClient.extend({
 
     transactions: httpMethod({
       method: 'GET',
-      path: '{UserId}/transactions?per_page={per_page}&page={page}',
+      path: '{UserId}/transactions',
       params: {
         UserId: { required: true },
-        per_page: { required: false, default: '10' },
-        page: { required: false, default: '0' },
       },
     }),
 
