@@ -33,7 +33,7 @@ function Mango(options) {
   // mount endpoints
   this.mount(
     this._options.mount ||
-      "user|card|kyc|wallet|author|bank|document|payin|payout|hook|event|mandate|repudiation|transfer|dispute"
+    "user|card|kyc|wallet|author|bank|document|payin|payout|preauth|hook|event|mandate|repudiation|transfer|dispute"
   );
 
   // set auth
