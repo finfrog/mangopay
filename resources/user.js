@@ -114,8 +114,12 @@ module.exports = httpClient.extend({
 
     mandates: httpMethod({
       method: "GET",
-      path: "{UserId}/mandates",
-      params: { UserId: { required: true } }
+      path: "{UserId}/mandates?per_page={per_page}&page={page}",
+      params: {
+        UserId: { required: true },
+        per_page: { required: false, default: "10" },
+        page: { required: false, default: "0" }
+      }
     })
   }
 });
